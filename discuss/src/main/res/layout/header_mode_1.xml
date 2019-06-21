@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flyersoft.discuss.weight.HeaderModeStyleOne xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header1"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:gravity="center_vertical"
+    android:layout_height="50dp"
+    android:background="#EFEFEF">
+
+    <TextView
+        android:id="@+id/header_moder_left"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="返回"
+        android:textColor="#282828"
+        android:textSize="13dp"
+        android:layout_alignParentLeft="true"/>
+
+    <TextView
+        android:id="@+id/header_moder_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="书荒互助"
+        android:textColor="#222222"
+        android:textSize="16dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/header_moder_right"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:text="选项"
+        android:textColor="#222222"
+        android:textSize="13dp"
+        android:gravity="center"/>
+
+</com.flyersoft.discuss.weight.HeaderModeStyleOne>

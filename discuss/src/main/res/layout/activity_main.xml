@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flyersoft.discuss.MainLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/main_gridview_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="#F4F4F4"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="@string/discuss_public_module"
+            android:textColor="#999999" />
+
+        <GridView
+            android:id="@+id/main_gridview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF"
+            android:columnWidth="90dp"
+            android:horizontalSpacing="10dp"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="4"
+            android:paddingBottom="8dp"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp"></GridView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/swipeRefreshLayout_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#F4F4F4"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="@string/discuss_new_discuss"
+        android:textColor="#999999" />
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/swipeRefreshLayout_title"
+        android:layout_above="@+id/main_gridview_layout"
+        android:background="#FFF">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/my_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
+
+    </com.baoyz.widget.PullRefreshLayout>
+
+
+</com.flyersoft.discuss.MainLayout>

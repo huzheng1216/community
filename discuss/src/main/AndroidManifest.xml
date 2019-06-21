@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.flyersoft.discuss">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.flyersoft.discuss.applocation.MoonReaderApplication"
+        android:allowBackup="true"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.NoTitleBar">
+        <activity android:name="com.flyersoft.discuss.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.flyersoft.discuss.shuhuang.DiscussionMainActivity"></activity>
+        <activity android:name="com.flyersoft.discuss.shuhuang.DiscussionHelpActivity"></activity>
+        <activity android:name="com.flyersoft.discuss.shuhuang.DiscussionChooseBookActivity"></activity>
+        <activity android:name="com.flyersoft.discuss.shuhuang.DiscussionChooseStarActivity"></activity>
+        <activity android:name="com.flyersoft.discuss.shuhuang.BookMainActivity"></activity>
+        <activity android:name="com.flyersoft.discuss.shuhuang.BookListMainActivity"></activity>
+        <activity
+            android:name="com.flyersoft.discuss.shuhuang.BookListCreatActivity"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name="com.flyersoft.discuss.shuhuang.UserInfoMainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name="com.flyersoft.discuss.weight.login.LandingPageActivity"></activity>
+        <activity
+            android:name="com.flyersoft.discuss.shuhuang.DiscussionArticleActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
+
+
+        <activity
+            android:name="com.flyersoft.discuss.wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent"></activity>
+        <activity
+            android:name="com.flyersoft.discuss.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent"></activity>
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"></activity>
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"></activity>
+    </application>
+
+</manifest>

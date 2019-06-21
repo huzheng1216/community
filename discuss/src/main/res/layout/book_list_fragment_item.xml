@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="#fff"
+    android:minHeight="100dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:padding="15dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/book_list_fragment_item_pic_3"
+            android:layout_width="40dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            fresco:backgroundImage="@mipmap/book_icon_default"/>
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/book_list_fragment_item_pic_2"
+            android:layout_width="40dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@id/book_list_fragment_item_pic_3"
+            fresco:backgroundImage="@mipmap/book_icon_default"/>
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/book_list_fragment_item_pic_1"
+            android:layout_width="55dp"
+            android:layout_height="85dp"
+            android:layout_centerHorizontal="true"
+            fresco:backgroundImage="@mipmap/book_icon_default"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="130dp"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/book_list_fragment_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="有点恐怖的小说"
+            android:textColor="#222"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/book_list_fragment_item_rep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/book_list_fragment_item_title"
+            android:maxLines="2"
+            android:paddingTop="2dp"
+            android:layout_marginRight="20dp"
+            android:text="专门收集各种恐怖的小说，专门收集各种恐怖的小说，专门收集各种恐怖的小说，专门收集各种恐怖的小说，专门收集各种恐怖的小说，"
+            android:textColor="#888"
+            android:textSize="12dp" />
+
+
+        <LinearLayout
+            android:id="@+id/book_list_fragment_item_book_author_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="11dp"
+                android:layout_height="11dp"
+                android:src="@mipmap/new_ic_follower_count"/>
+            <TextView
+                android:id="@+id/book_list_fragment_item_book_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLength="8"
+                android:padding="0dp"
+                android:text="雪之舞"
+                android:layout_marginLeft="3dp"
+                android:textColor="#888"
+                android:textSize="11dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/book_list_fragment_item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="刚刚"
+            android:textColor="#888"
+            android:textSize="11dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

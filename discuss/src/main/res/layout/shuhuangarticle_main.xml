@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/header_mode_1"></include>
+
+    <RelativeLayout
+        android:id="@+id/shuhuangarticle_main_bottom_bt"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#B93321"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="写评论"
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
+    </RelativeLayout>
+
+    <com.flyersoft.discuss.weight.LoadingMoreScrollview
+        android:id="@+id/shuhuangarticle_main_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/shuhuangarticle_main_bottom_bt"
+        android:layout_below="@+id/header1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/shuhuangarticle_content_module"></include>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="仰望神评论" />
+
+            <com.flyersoft.discuss.weight.ForScrollLayoutListView
+                android:id="@+id/shuhuangarticle_main_hot_comment_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></com.flyersoft.discuss.weight.ForScrollLayoutListView>
+
+            <TextView
+                android:id="@+id/shuhuangarticle_main_comment_textview"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="0条评论" />
+
+            <com.flyersoft.discuss.weight.ForScrollLayoutListView
+                android:id="@+id/shuhuangarticle_main_comment_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></com.flyersoft.discuss.weight.ForScrollLayoutListView>
+
+        </LinearLayout>
+
+
+    </com.flyersoft.discuss.weight.LoadingMoreScrollview>
+
+</RelativeLayout>

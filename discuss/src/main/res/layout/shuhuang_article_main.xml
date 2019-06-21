@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAEAEF">
+
+    <include layout="@layout/header_mode_2"></include>
+
+
+
+    <RelativeLayout
+        android:id="@+id/shuhuang_article_comment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFFFFF"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:gravity="center_vertical">
+
+
+        <ImageView
+            android:id="@+id/shuhuang_article_share_bt"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="15dp"
+            android:src="@mipmap/share"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/shuhuang_article_collection_bt"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="15dp"
+            android:src="@drawable/collection_selector"
+            android:layout_toLeftOf="@id/shuhuang_article_share_bt"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/shuhuang_article_comment_count_bt"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:src="@mipmap/comm_count"
+            android:layout_toLeftOf="@id/shuhuang_article_collection_bt"
+            android:layout_centerVertical="true"/>
+
+
+        <Button
+            android:id="@+id/shuhuang_article_comment_bt"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_toLeftOf="@id/shuhuang_article_comment_count_bt"
+            android:padding="0dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/comm_back"
+            android:drawableLeft="@mipmap/comm_pain"
+            android:text="写评论..."
+            android:gravity="left|center_vertical"
+            android:layout_centerVertical="true"
+            android:textSize="16dp"/>
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#eeeeee"
+        android:layout_alignTop="@id/shuhuang_article_comment_layout">
+    </View>
+
+
+    <com.flyersoft.discuss.shuhuang.ScrollBottomScrollView
+        android:id="@+id/shuhuang_article_comment_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/shuhuang_article_comment_layout"
+        android:layout_below="@id/header1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/shuhuang_article_auther"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:padding="10dp">
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/shuhuang_article_auther_pic"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        fresco:roundAsCircle="true"
+                        fresco:placeholderImage="@mipmap/meme_default_image" />
+
+                    <TextView
+                        android:id="@+id/shuhuang_article_auther_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:layout_toRightOf="@id/shuhuang_article_auther_pic"
+                        android:text="最讨厌废材"
+                        android:textColor="#A48C61"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:id="@+id/shuhuang_article_auther_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_below="@id/shuhuang_article_auther_name"
+                        android:layout_toRightOf="@id/shuhuang_article_auther_pic"
+                        android:gravity="bottom"
+                        android:text="1天前"
+                        android:textColor="#A48C61"
+                        android:textSize="11dp" />
+
+                    <Button
+                        android:id="@+id/shuhuang_article_auther_attention"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:text="关注"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/focus"
+                        android:textColor="@drawable/attention_text_color"/>
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/shuhuang_article_auther_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="字多就有道理字多就有道理"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="21dp" />
+
+                <TextView
+                    android:id="@+id/shuhuang_article_auther_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="字多就有道理字多就有道理字多就有道理字多就有道理字多就有道理字多就有道理字多就有道理字多就有道理字多就有道理字多就有道理字多就有道理字多就有道理字多就有道理字多就有道理字多就有道理"
+                    android:textSize="16dp" />
+
+                <RelativeLayout
+                    android:id="@+id/shuhuang_article_auther_book_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/shuhuang_main_book_back"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp">
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/shuhuang_article_auther_book_img"
+                        android:layout_width="40dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="10dp"
+                        android:src="@mipmap/ic_launcher"
+                        android:background="#f2f2f2"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/shuhuang_article_auther_book_img"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/shuhuang_article_auther_book_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="未知书名"
+                            android:textSize="16dp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/shuhuang_article_auther_book_name"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/shuhuang_article_auther_book_auther"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="作者："
+                                android:textSize="11dp" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/shuhuang_article_auther_content_same_coll_bt"
+                        android:layout_width="60dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:text="收藏"
+                        android:background="@drawable/focus"
+                        android:textColor="#fff"
+                        android:visibility="gone" />
+
+                    <RadioButton
+                        android:id="@+id/shuhuang_article_auther_content_same_dic_bt"
+                        android:layout_width="70dp"
+                        android:layout_height="30dp"
+                        android:drawableLeft="@drawable/same_fill_icon_selector"
+                        android:drawablePadding="1dp"
+                        android:background="@drawable/same_fill_back_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="点赞"
+                        android:textSize="14dp"
+                        android:layout_margin="10dp"
+                        android:textColor="#000"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/shuhuang_article_auther_content_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:adjustViewBounds="true"
+                        android:padding="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/post_detail_more" />
+
+                    <ImageView
+                        android:id="@+id/shuhuang_article_auther_content_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/shuhuang_article_auther_content_more"
+                        android:adjustViewBounds="true"
+                        android:padding="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/post_detail_share" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/shuhuang_article_auther_content_usefor_tag_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/shuhuang_article_auther_content_grade"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="40dp"-->
+                        <!--android:background="#F4F4F4"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:padding="10dp"-->
+                        <!--android:text="给书评打分" />-->
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/shuhuang_article_auther_content_usefor_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:orientation="horizontal">
+
+                    <!--<RelativeLayout-->
+                        <!--android:id="@+id/shuhuang_article_auther_content_usefor"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="50dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:gravity="center">-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/shuhuang_article_auther_content_usefor_grade"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:gravity="center"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18dp" />-->
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_below="@id/shuhuang_article_auther_content_usefor_grade"-->
+                            <!--android:gravity="center">-->
+
+                            <!--<ImageView-->
+                                <!--android:id="@+id/shuhuang_article_auther_content_usefor_grade_icon"-->
+                                <!--android:layout_width="14dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:adjustViewBounds="true"-->
+                                <!--android:scaleType="fitXY"-->
+                                <!--android:src="@mipmap/review_useful_yes_nor" />-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/shuhuang_article_auther_content_usefor_text"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_below="@id/shuhuang_article_auther_content_usefor_grade"-->
+                                <!--android:layout_marginLeft="5dp"-->
+                                <!--android:layout_toRightOf="@+id/shuhuang_article_auther_content_usefor_grade_icon"-->
+                                <!--android:gravity="center"-->
+                                <!--android:text="有用"-->
+                                <!--android:textSize="12dp" />-->
+                        <!--</LinearLayout>-->
+                    <!--</RelativeLayout>-->
+
+                    <!--<RelativeLayout-->
+                        <!--android:id="@+id/shuhuang_article_auther_content_useless"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="50dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:gravity="center">-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/shuhuang_article_auther_content_useless_grade"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:gravity="center"-->
+                            <!--android:text="0"-->
+                            <!--android:textSize="18dp" />-->
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_below="@id/shuhuang_article_auther_content_useless_grade"-->
+                            <!--android:gravity="center">-->
+
+                            <!--<ImageView-->
+                                <!--android:id="@+id/shuhuang_article_auther_content_useless_grade_icon"-->
+                                <!--android:layout_width="14dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:adjustViewBounds="true"-->
+                                <!--android:scaleType="fitXY"-->
+                                <!--android:src="@mipmap/review_useful_no_nor" />-->
+
+                            <!--<TextView-->
+                                <!--android:id="@+id/shuhuang_article_auther_content_useless_text"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_below="@id/shuhuang_article_auther_content_usefor_grade"-->
+                                <!--android:layout_marginLeft="5dp"-->
+                                <!--android:layout_toRightOf="@+id/shuhuang_article_auther_content_usefor_grade_icon"-->
+                                <!--android:gravity="center"-->
+                                <!--android:text="无用"-->
+                                <!--android:textSize="12dp" />-->
+                        <!--</LinearLayout>-->
+                    <!--</RelativeLayout>-->
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/shuhuang_article_auther_hot_com_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/shuhuang_article_auther_hot_content_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#F4F4F4"
+                    android:gravity="bottom"
+                    android:padding="10dp"
+                    android:text="热门评论" />
+                <com.flyersoft.discuss.weight.ForScrollLayoutRecyclerView
+                    android:id="@+id/shuhuang_article_auther_hot_content_listview"
+                    android:scrollbars="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/shuhuang_article_auther_content_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#F4F4F4"
+                    android:gravity="bottom"
+                    android:padding="10dp"
+                    android:text="0条评论" />
+                <com.flyersoft.discuss.weight.ForScrollLayoutRecyclerView
+                    android:id="@+id/shuhuang_article_auther_content_listview"
+                    android:scrollbars="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+                <!--<discusseight.ForScrollLayoutListView-->
+                    <!--android:id="@+id/shuhuang_article_auther_content_listview"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:divider="#858585"-->
+                    <!--android:dividerHeight="1px"></discusseight.ForScrollLayoutListView>-->
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.flyersoft.discuss.shuhuang.ScrollBottomScrollView>
+
+</RelativeLayout>

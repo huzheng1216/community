@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEFEFE"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/header_mode_2"></include>
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/book_list_main_tablayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:tabGravity="center"
+        app:tabIndicatorColor="#DC544D"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#DC544D"
+        app:tabTextColor="#aaa" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/book_list_main_edit_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:onClick="creatBookList">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/my_booklist_icon_edit" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="创建书单"
+                android:paddingLeft="5dp"
+                android:textColor="@color/text_main" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/book_list_main_edit_layout_line"
+            android:layout_above="@id/book_list_main_edit_layout"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#aaa"></View>
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/book_list_main_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/book_list_main_edit_layout_line" />
+    </RelativeLayout>
+
+
+</LinearLayout>

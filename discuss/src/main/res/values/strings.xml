@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">搜书大师</string>
+    <string name="landing_zfb">支付宝登陆</string>
+    <string name="landing_wx">微信登陆</string>
+    <string name="discuss_public_module">公共模块</string>
+    <string name="discuss_new_discuss">热门讨论</string>
+</resources>

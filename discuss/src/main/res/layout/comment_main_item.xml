@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="#EAEAEF"
+    android:minHeight="90dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/shuhuang_main_comm_pic"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            fresco:placeholderImage="@mipmap/user_default"
+            android:src="@mipmap/ic_launcher"
+            fresco:roundAsCircle="true"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="10dp"
+            android:layout_toRightOf="@id/shuhuang_main_comm_pic">
+
+
+
+            <com.flyersoft.discuss.weight.MyRadioButton
+                android:id="@+id/shuhuang_main_comm_dis_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:padding="0dp"
+                android:button="@null"
+                android:text="0"
+                android:textColor="#888"
+                android:textSize="14dp"
+                fresco:drawableSizes="15dp"
+                fresco:drawableLeft="@drawable/dis_selector" />
+
+            <TextView
+                android:id="@+id/shuhuang_main_comm_lou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#a58d5e"
+                android:text="1楼"
+                android:textSize="12dp"
+                android:maxLines="1"/>
+            <TextView
+                android:id="@+id/shuhuang_main_comm_auther"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/shuhuang_main_comm_lou"
+                android:textColor="#a58d5e"
+                android:text="auther"
+                android:textSize="12dp"
+                android:maxLines="1"
+                android:paddingLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/shuhuang_main_item_comm_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shuhuang_main_comm_lou"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:text="xxxxxxxx"
+                android:textSize="14dp"/>
+
+
+            <TextView
+                android:id="@+id/shuhuang_main_comm_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shuhuang_main_item_comm_content"
+                android:textColor="#a58d5e"
+                android:text="11-11"
+                android:textSize="12dp"
+                android:maxLines="1"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

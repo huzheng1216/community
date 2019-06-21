@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="0dp"
+    android:background="@drawable/book_creat_back"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <EditText
+        android:id="@+id/discussion_book_choose_creat_name_edit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:background="@drawable/book_creat_edit_back"
+        android:hint="输入书名"
+        android:padding="8dp"
+        android:paddingLeft="10dp" />
+
+    <EditText
+        android:id="@+id/discussion_book_choose_creat_auther_edit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:background="@drawable/book_creat_edit_back"
+        android:hint="输入作者"
+        android:padding="8dp"
+        android:paddingLeft="10dp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/book_creat_edit_back"
+        android:paddingLeft="10dp">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/discussion_book_choose_dialog_book_pic"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_launcher"
+            android:background="#aaa"
+            />
+
+        <Button
+            android:id="@+id/discussion_book_choose_select_bookicon"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:layout_margin="7dp"
+            android:background="@drawable/book_creat_bt_back"
+            android:gravity="center"
+            android:onClick="onBookSelect"
+            android:padding="0dp"
+            android:text="选择图片"
+            android:textColor="#000000"
+            android:textSize="14dp" />
+    </RelativeLayout>
+
+
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="10dp"-->
+    <!--android:text="选择封面图片:"/>-->
+
+    <!--<GridView-->
+    <!--android:id="@+id/discussion_book_choose_creat_pic_gridview"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:cacheColorHint="@null"-->
+    <!--android:paddingLeft="10dp"-->
+    <!--android:paddingRight="10dp"-->
+    <!--android:columnWidth="6dp"-->
+    <!--android:gravity="center"-->
+    <!--android:horizontalSpacing="5dp"-->
+    <!--android:numColumns="3"-->
+    <!--android:stretchMode="columnWidth"-->
+    <!--android:verticalSpacing="2dp">-->
+    <!--</GridView>-->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/discussion_book_choose_creat_ok"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="7dp"
+            android:background="@drawable/book_creat_bt_back"
+            android:gravity="center"
+            android:onClick="onSearch"
+            android:padding="0dp"
+            android:text="创建"
+            android:textColor="#000000"
+            android:textSize="14dp" />
+
+        <Button
+            android:id="@+id/discussion_book_choose_creat_no"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_margin="7dp"
+            android:layout_toLeftOf="@id/discussion_book_choose_creat_ok"
+            android:background="@drawable/book_creat_bt_back"
+            android:gravity="center"
+            android:onClick="onSearch"
+            android:padding="0dp"
+            android:text="取消"
+            android:textColor="#000000"
+            android:textSize="14dp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

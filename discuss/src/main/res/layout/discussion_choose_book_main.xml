@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/header_mode_1"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#F5F2ED">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/discussion_book_choose_edit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:hint="输入书籍名称"
+                android:paddingLeft="10dp"/>
+            <EditText
+                android:id="@+id/discussion_book_choose_edit2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:layout_below="@id/discussion_book_choose_edit"
+                android:hint="输入作者"
+                android:paddingLeft="10dp"/>
+            <Button
+                android:id="@+id/discussion_book_choose_creat_bt"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/discussion_book_choose_edit2"
+                android:text="创建"
+                android:gravity="center"
+                android:padding="0dp"
+                android:layout_margin="7dp"
+                android:background="@drawable/focus_on_back"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:onClick="onCreat"/>
+            <Button
+                android:id="@+id/discussion_book_choose_search_bt"
+                android:layout_toLeftOf="@id/discussion_book_choose_creat_bt"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/discussion_book_choose_edit2"
+                android:text="搜书"
+                android:gravity="center"
+                android:padding="0dp"
+                android:layout_margin="7dp"
+                android:background="@drawable/focus_on_back"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:onClick="onSearch"/>
+        </RelativeLayout>
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:text="来自书架"-->
+            <!--android:padding="10dp"-->
+            <!--android:background="#F4F4F4"-->
+            <!--android:gravity="bottom"/>-->
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/discussion_book_choose_recycler_view"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+</LinearLayout>

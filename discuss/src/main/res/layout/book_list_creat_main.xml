@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEFEFE"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/header_mode_3"></include>
+
+    <EditText
+        android:id="@+id/book_list_creat_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:maxLines="2"
+        android:padding="5dp"
+        android:textColor="#222"
+        android:textSize="16dp"
+        android:hint="填写书单名(不超过30字)"
+        android:maxLength="30"
+        android:background="@null"
+        android:textCursorDrawable="@drawable/edit_cursor_color"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#aaa"></View>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+        <EditText
+            android:id="@+id/book_list_creat_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="#888"
+            android:hint="请简明扼要的说明下书单的主题，字数请控制在200字以内。"
+            android:maxLength="200"
+            android:gravity="left"
+            android:textSize="14dp"
+            android:padding="5dp"
+            android:background="@null"
+            android:textCursorDrawable="@drawable/edit_cursor_color"/>
+        <TextView
+            android:id="@+id/book_list_creat_content_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/200"
+            android:textSize="12dp"
+            android:textColor="#bbb"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10dp"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#eee"></View>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/book_list_creat_add_book_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:onClick="addBookList">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/booklist_icon_book" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="添加书籍"
+                android:paddingLeft="5dp"
+                android:textColor="@color/text_main" />
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/book_list_creat_line"
+            android:layout_above="@id/book_list_creat_add_book_layout"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#aaa"></View>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/book_list_creat_line">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/my_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
