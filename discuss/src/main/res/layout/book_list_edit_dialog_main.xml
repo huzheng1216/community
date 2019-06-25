@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/book_edit_back"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/book_list_edit_book_pic"
+        android:layout_width="70dp"
+        android:layout_height="90dp"
+        android:layout_margin="12dp"
+        android:src="@mipmap/ic_launcher"
+        fresco:backgroundImage="@mipmap/meme_default_image" />
+
+    <EditText
+        android:id="@+id/book_list_edit_book_intro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/book_edit_back"
+        android:gravity="left"
+        android:hint="写下你推荐这本书的原因吧～"
+        android:maxLength="200"
+        android:padding="5dp"
+        android:textColor="#444"
+        android:minLines="6"
+        android:maxLines="6"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textCursorDrawable="@drawable/edit_cursor_color"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/book_list_edit_content_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:layout_marginRight="20dp"
+        android:text="0/200"
+        android:textColor="#bbb"
+        android:textSize="12dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#aaa"
+        android:layout_marginTop="20dp"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/book_list_creat_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:onClick="onClick"
+            android:textSize="15dp"
+            android:text="取消"
+            android:textColor="#666" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="#aaa"></View>
+
+        <Button
+            android:id="@+id/book_list_creat_ok"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:onClick="onClick"
+            android:textSize="15dp"
+            android:text="保存"
+            android:textColor="@color/text_main" />
+    </LinearLayout>
+
+
+</LinearLayout>
