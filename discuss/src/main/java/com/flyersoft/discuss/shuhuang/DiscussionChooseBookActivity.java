@@ -154,10 +154,12 @@ public class DiscussionChooseBookActivity extends DiscessBaseActivity implements
         MRManager.getInstance(this).getMyShelf(0, 20, new RequestCallBack<List<ShelfBook>>() {
             @Override
             public void onSuccess(List<ShelfBook> shelfBooks) {
-                for (ShelfBook s : shelfBooks) {
-                    Book book = new Book();
-                    book.setTitle(s.getBookName());
-                    data.add(book);
+                if (shelfBooks != null) {
+                    for (ShelfBook s : shelfBooks) {
+                        Book book = new Book();
+                        book.setTitle(s.getBookName());
+                        data.add(book);
+                    }
                 }
             }
 

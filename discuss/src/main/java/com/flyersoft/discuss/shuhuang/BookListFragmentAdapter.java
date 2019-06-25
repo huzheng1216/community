@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.flyersoft.discuss.R;
+import com.flyersoft.discuss.javabean.seekbook.BookList;
 import com.flyersoft.discuss.javabean.seekbook.Discuss;
 import com.flyersoft.discuss.tools.StringTools;
 
@@ -29,11 +30,11 @@ public class BookListFragmentAdapter extends RecyclerView.Adapter<ViewHolder> {
     public static final int TYPE_FOOT = 0;
     public static final int TYPE_DATA = 1;
 
-    private List<Discuss> mData;
+    private List<BookList> mData;
     private OnItemClickListener mListener;
     private boolean hasFoot;//是否展示加载更多
 
-    public BookListFragmentAdapter(List<Discuss> data) {
+    public BookListFragmentAdapter(List<BookList> data) {
         this.mData = data;
     }
 
@@ -64,11 +65,9 @@ public class BookListFragmentAdapter extends RecyclerView.Adapter<ViewHolder> {
         }else{
             ItemViewHolder iholder = (ItemViewHolder) holder;
             // 绑定数据
-            iholder.name.setText(mData.get(position).getUserName());
-            iholder.content.setText(mData.get(position).getTitle());
-            iholder.comm_count.setText("评论："+mData.get(position).getCommCount());
-            iholder.tip_count.setText("同感："+mData.get(position).getSameFeelCount());
-            iholder.pic.setImageURI(mData.get(position).getUserIcn());
+            iholder.title.setText(mData.get(position).getListName());
+            iholder.intro.setText(mData.get(position).getListIntro());
+            iholder.author.setText(mData.get(position).getUserName());
             iholder.time.setText(StringTools.differTime(mData.get(position).getCreateTime()));
             if(null != mListener){
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -98,22 +97,24 @@ public class BookListFragmentAdapter extends RecyclerView.Adapter<ViewHolder> {
     public static class ItemViewHolder extends ViewHolder {
 
         View itemView;
-        SimpleDraweeView pic;
-        TextView name;
+        SimpleDraweeView pic1;
+        SimpleDraweeView pic2;
+        SimpleDraweeView pic3;
+        TextView author;
+        TextView title;
+        TextView intro;
         TextView time;
-        TextView content;
-        TextView comm_count;//评论数
-        TextView tip_count;//点赞/收藏数
 
         public ItemViewHolder(View itemView) {
             super(itemView);
             this.itemView = itemView;
-            pic = itemView.findViewById(R.id.shuhuang_main_item_user_pic);
-            name = itemView.findViewById(R.id.shuhuang_main_item_user_name);
-            time = itemView.findViewById(R.id.shuhuang_main_item_time);
-            content = itemView.findViewById(R.id.shuhuang_main_item_user_help);
-            comm_count = itemView.findViewById(R.id.shuhuang_main_item_comm_count);
-            tip_count = itemView.findViewById(R.id.shuhuang_main_item_tip_count);
+            pic1 = itemView.findViewById(R.id.book_list_fragment_item_pic_1);
+            pic2 = itemView.findViewById(R.id.book_list_fragment_item_pic_2);
+            pic3 = itemView.findViewById(R.id.book_list_fragment_item_pic_3);
+            author = itemView.findViewById(R.id.book_list_fragment_item_book_author);
+            title = itemView.findViewById(R.id.book_list_fragment_item_title);
+            intro = itemView.findViewById(R.id.book_list_fragment_item_rep);
+            time = itemView.findViewById(R.id.book_list_fragment_item_time);
         }
     }
 
@@ -142,7 +143,7 @@ public class BookListFragmentAdapter extends RecyclerView.Adapter<ViewHolder> {
 
 
     public ViewHolder onCreateDataViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.shuhuang_main_item, null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.book_list_fragment_item, null);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         view.setLayoutParams(lp);
         return new ItemViewHolder(view);

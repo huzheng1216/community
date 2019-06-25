@@ -44,6 +44,7 @@ import com.flyersoft.discuss.javabean.account.WXAccessToken;
 import com.flyersoft.discuss.javabean.account.WXLandingConfig;
 import com.flyersoft.discuss.javabean.account.ZFBLandingConfig;
 import com.flyersoft.discuss.javabean.seekbook.BookList;
+import com.flyersoft.discuss.javabean.seekbook.BookListInfo;
 import com.flyersoft.discuss.javabean.seekbook.CommentSubmiter;
 import com.flyersoft.discuss.javabean.seekbook.Comments;
 import com.flyersoft.discuss.javabean.seekbook.Discuss;
@@ -564,11 +565,32 @@ public class MRManager {
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
+    /**
+     * @author huzheng
+     * @date 2019/6/24
+     * @description
+     * 查询书单列表
+     */
     public Observable<BaseRequest<List<BookList>>> queryBookLists(int skip, int maxCount){
         if (bookListBiz == null) {
             bookListBiz = new BookListBiz(context);
         }
         return bookListBiz.queryBookLists(skip, maxCount).subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    /**
+     * @author huzheng
+     * @date 2019/6/24
+     * @description
+     * 查询某个书单
+     */
+    public Observable<BaseRequest<List<BookListInfo>>> queryBookList(String listId, int skip, int maxCount){
+        if (bookListBiz == null) {
+            bookListBiz = new BookListBiz(context);
+        }
+        return bookListBiz.queryBookList(listId, skip, maxCount).subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

@@ -75,8 +75,8 @@ public class DiscussionMainAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             // 绑定数据
             iholder.name.setText(mData.get(position).getUserName());
             iholder.content.setText(mData.get(position).getTitle());
-            iholder.comm_count.setText("评论："+mData.get(position).getCommCount());
-            iholder.tip_count.setText("同感："+mData.get(position).getSameFeelCount());
+            iholder.comm_count.setText(mData.get(position).getCommCount()+"");
+            iholder.tip_count.setText(mData.get(position).getSameFeelCount()+"");
             iholder.pic.setImageURI(mData.get(position).getUserIcn());
             iholder.time.setText(StringTools.differTime(mData.get(position).getCreateTime()));
             if(null != mListener){

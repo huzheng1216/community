@@ -20,10 +20,12 @@ import com.flyersoft.discuss.javabean.account.AccountData;
 import com.flyersoft.discuss.javabean.seekbook.BookList;
 import com.flyersoft.discuss.javabean.seekbook.BookListInfo;
 import com.flyersoft.discuss.tools.LogTools;
+import com.flyersoft.discuss.tools.StringTools;
 import com.flyersoft.discuss.tools.ToastTools;
 import com.flyersoft.discuss.weight.DividerItemDecorationStyleOne;
 import com.flyersoft.discuss.weight.HeaderModeStyleThree;
 import com.flyersoft.discuss.weight.HeaderModeStyleThree.HeaderModeStyleThreeListener;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +48,7 @@ public class BookListCreatActivity extends BaseFragmentActivity {
     private BookListCreatAdapter mAdapter;
     private List<BookListInfo> data;
     private long lastClick = 0;
+    private int currentPosition = -1;
 
 
     @Override
@@ -96,7 +99,7 @@ public class BookListCreatActivity extends BaseFragmentActivity {
                     @Override
                     public void onNext(BaseRequest baseRequest) {
                         ToastTools.showToast(BookListCreatActivity.this, baseRequest.getErrorCode() == 0 ? "创建成功！" : "失败。。。。");
-                        if(baseRequest.getErrorCode() == 0){
+                        if (baseRequest.getErrorCode() == 0) {
                             BookListCreatActivity.this.finish();
                         }
                     }
@@ -133,25 +136,63 @@ public class BookListCreatActivity extends BaseFragmentActivity {
 
     @Override
     protected void initData() {
-        data = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            BookListInfo bli = new BookListInfo();
-            bli.setBookName("魔法师的意志");
-            bli.setBookAuthor("血之舞");
-            bli.setBookIcn("http://img.1391.com/api/v1/bookcenter/cover/1/1183612/_1183612_416925.jpg/");
-            bli.setBookAppraise("不错不错，很好的一本书，看了很多遍了，非常的推荐。。。。");
-            data.add(bli);
+        String json = getIntent().getStringExtra("data");
+        this.data = new ArrayList<>();
+        if (StringTools.isNotEmpty(json)) {
+            BookList bookList = new Gson().fromJson(json, BookList.class);
+            this.title.setText(bookList.getListName());
+            this.content.setText(bookList.getListIntro());
+            MRManager.getInstance(this).queryBookList(bookList.getListId(), 0, 50).subscribe(new Observer<BaseRequest<List<BookListInfo>>>() {
+                @Override
+                public void onSubscribe(Disposable disposable) {
+
+                }
+
+                @Override
+                public void onNext(BaseRequest<List<BookListInfo>> listBaseRequest) {
+                    data.clear();
+                    data.addAll(listBaseRequest.getData());
+                    mAdapter.notifyDataSetChanged();
+                }
+
+                @Override
+                public void onError(Throwable throwable) {
+                    ToastTools.showToast(BookListCreatActivity.this, throwable.getMessage());
+                }
+
+                @Override
+                public void onComplete() {
+
+                }
+            });
+        } else {
+            for (int i = 0; i < 5; i++) {
+                BookListInfo bli = new BookListInfo();
+                bli.setBookName("魔法师的意志");
+                bli.setBookAuthor("血之舞");
+                bli.setBookIcn("http://img.1391.com/api/v1/bookcenter/cover/1/1183612/_1183612_416925.jpg/");
+                bli.setBookAppraise("不错不错，很好的一本书，看了很多遍了，非常的推荐。。。。");
+                this.data.add(bli);
+            }
         }
-        mAdapter = new BookListCreatAdapter(data);
+
+        mAdapter = new BookListCreatAdapter(this.data);
         mAdapter.setOnItemClickListener(new BookListCreatAdapter.OnItemRemoveListener() {
             @Override
             public void onItemEdit(int position) {
                 LogTools.H("编辑：" + position);
+                Intent intent = new Intent(BookListCreatActivity.this, BookListEditDialogActivity.class);
+                intent.putExtra("data", new Gson().toJson(data.get(position)));
+//                intent.putExtra("position", position);
+                currentPosition = position;
+                startActivityLimitForResult(intent, 1001);
             }
 
             @Override
             public void onItemRemove(int position) {
                 LogTools.H("删除：" + position);
+                data.remove(position);
+                mAdapter.notifyDataSetChanged();
             }
         });
         // 设置adapter
@@ -160,8 +201,14 @@ public class BookListCreatActivity extends BaseFragmentActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String result = data.getExtras().getString("loading");//得到新Activity 关闭后返回的数据
-        initData();
+        if (resultCode == 1002) {
+            String content = data.getStringExtra("content");
+            LogTools.H(currentPosition + " = " + content);
+            if (currentPosition > -1) {
+                this.data.get(currentPosition).setBookAppraise(content);
+                this.mAdapter.notifyDataSetChanged();
+            }
+        }
     }
 
     //添加书籍

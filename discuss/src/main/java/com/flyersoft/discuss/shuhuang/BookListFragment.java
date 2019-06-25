@@ -1,5 +1,6 @@
 package com.flyersoft.discuss.shuhuang;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -19,7 +20,9 @@ import com.flyersoft.discuss.javabean.seekbook.Discuss;
 import com.flyersoft.discuss.tools.LogTools;
 import com.flyersoft.discuss.tools.ToastTools;
 import com.flyersoft.discuss.weight.DividerItemDecorationStyleOne;
+import com.google.gson.Gson;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Observer;
@@ -42,6 +45,7 @@ public class BookListFragment extends BaseFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        data = new ArrayList<>();
     }
 
     @Override
@@ -59,8 +63,16 @@ public class BookListFragment extends BaseFragment {
             }
         });
 
-
-        mRecyclerView = view.findViewById(R.id.my_recycler_view);
+        mRecyclerView = view.findViewById(R.id.book_list_fragment_recyclerview);
+        mAdapter = new BookListFragmentAdapter(data);
+        mAdapter.setOnItemClickListener(new BookListFragmentAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent(getContext(), BookListCreatActivity.class);
+                intent.putExtra("data", new Gson().toJson(data.get(position)));
+                getActivity().startActivity(intent);
+            }
+        });
         // 设置adapter
         mRecyclerView.setAdapter(mAdapter);
         // 设置Item添加和移除的动画
@@ -93,9 +105,7 @@ public class BookListFragment extends BaseFragment {
     private void getData(int page, final boolean isRefresh) {
         MRManager.getInstance(getContext()).queryBookLists(page, 10).subscribe(new Observer<BaseRequest<List<BookList>>>() {
             @Override
-            public void onSubscribe(Disposable disposable) {
-
-            }
+            public void onSubscribe(Disposable disposable) {}
 
             @Override
             public void onNext(BaseRequest<List<BookList>> listBaseRequest) {

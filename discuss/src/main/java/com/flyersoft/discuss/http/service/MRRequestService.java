@@ -22,6 +22,7 @@ import com.flyersoft.discuss.javabean.account.UserInfo;
 import com.flyersoft.discuss.javabean.account.WXLandingConfig;
 import com.flyersoft.discuss.javabean.account.ZFBLandingConfig;
 import com.flyersoft.discuss.javabean.seekbook.BookList;
+import com.flyersoft.discuss.javabean.seekbook.BookListInfo;
 import com.flyersoft.discuss.javabean.seekbook.Comments;
 import com.flyersoft.discuss.javabean.seekbook.Discuss;
 
@@ -177,4 +178,7 @@ public interface MRRequestService {
 
     @GET("mreader/discuss/queryBookLists.do")
     Observable<BaseRequest<List<BookList>>> queryBookLists(@Query("skip")int skip, @Query("maxCount")int maxCount);
+
+    @GET("mreader/discuss/queryBookListInfo.do")
+    Observable<BaseRequest<List<BookListInfo>>> queryBookList(@Query("listId")String listId, @Query("skip")int skip, @Query("maxCount")int maxCount);
 }
