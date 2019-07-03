@@ -16,9 +16,7 @@ import com.flyersoft.discuss.R;
 import com.flyersoft.discuss.http.MRManager;
 import com.flyersoft.discuss.http.body.BaseRequest;
 import com.flyersoft.discuss.javabean.seekbook.BookList;
-import com.flyersoft.discuss.javabean.seekbook.Discuss;
 import com.flyersoft.discuss.tools.LogTools;
-import com.flyersoft.discuss.tools.ToastTools;
 import com.flyersoft.discuss.weight.DividerItemDecorationStyleOne;
 import com.google.gson.Gson;
 

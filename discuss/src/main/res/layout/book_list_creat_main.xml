@@ -14,7 +14,8 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:maxLines="2"
-        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:textColor="#222"
         android:textSize="16dp"
         android:hint="填写书单名(不超过30字)"
@@ -37,7 +38,7 @@
             android:maxLength="200"
             android:gravity="left"
             android:textSize="14dp"
-            android:padding="5dp"
+            android:padding="10dp"
             android:background="@null"
             android:textCursorDrawable="@drawable/edit_cursor_color"/>
         <TextView

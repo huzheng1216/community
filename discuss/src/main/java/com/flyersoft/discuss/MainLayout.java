@@ -47,7 +47,6 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * Created by huzheng on 2017/11/7.
  */
-
 public class MainLayout extends RelativeLayout {
 
     private GridView gridView;

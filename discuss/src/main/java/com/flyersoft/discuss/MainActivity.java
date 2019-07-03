@@ -10,12 +10,12 @@ import com.flyersoft.discuss.javabean.account.AccountData;
 import com.flyersoft.discuss.javabean.account.UserInfo;
 import com.flyersoft.discuss.weight.login.LandingPageActivity;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseFragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_new);
 
         //获取用户登陆信息
         AccountData.getInstance(this).getUserInfo(this, new RequestCallBack<UserInfo>() {

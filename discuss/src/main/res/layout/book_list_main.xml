@@ -19,6 +19,7 @@
         app:tabIndicatorColor="#DC544D"
         app:tabMode="scrollable"
         app:tabSelectedTextColor="#DC544D"
+        app:tabBackground="@android:color/transparent"
         app:tabTextColor="#aaa" />
 
     <RelativeLayout

@@ -15,14 +15,13 @@ import java.util.List;
  */
 public class BookListPageAdapter extends FragmentPagerAdapter {
 
-    public final String[] tabTitles = new String[]{"发布"};
+    public final String[] tabTitles = new String[]{"推荐", "发布"};
     private List<Fragment> mFragments = new ArrayList<Fragment>();
 
     public BookListPageAdapter(FragmentManager fm) {
         super(fm);
-        for (int i = 0; i < tabTitles.length; i++) {
-            mFragments.add(new BookListFragment());
-        }
+        mFragments.add(new BookListRecommendedFragment());
+        mFragments.add(new BookListFragment());
     }
 
     @Override
