@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
 
-    <include layout="@layout/header_mode_1"></include>
+    <!--<include layout="@layout/header_mode_1"></include>-->
 
 
     <LinearLayout

@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:text="添加书籍"
                 android:paddingLeft="5dp"
-                android:textColor="@color/text_main" />
+                android:textColor="@color/base_color" />
         </LinearLayout>
 
 

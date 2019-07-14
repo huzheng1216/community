@@ -13,6 +13,7 @@ import com.flyersoft.discuss.javabean.DefaultInfo;
 import com.flyersoft.discuss.javabean.DetailBookInfo;
 import com.flyersoft.discuss.javabean.DetailCatalogDetail;
 import com.flyersoft.discuss.javabean.DisRecordResult;
+import com.flyersoft.discuss.javabean.Order;
 import com.flyersoft.discuss.javabean.ShelfBook;
 import com.flyersoft.discuss.javabean.account.AmountInfo;
 import com.flyersoft.discuss.javabean.account.Collection;
@@ -171,6 +172,21 @@ public interface MRRequestService {
 
     @POST("mreader/u/queryAttenByUser.do")
     Observable<BaseRequest<List<UserInfo>>> queryAttenByUser();
+
+    @POST("mreader/u/queryOrdersByUser.do")
+    Observable<BaseRequest<List<Order>>> queryOrdersByUser();
+
+    @FormUrlEncoded
+    @POST("mreader/u/queryDisListByUser.do")
+    Observable<BaseRequest<List<Discuss>>> queryDisListByUser(@Field("from")int from, @Field("limit")int limit);
+
+    @FormUrlEncoded
+    @POST("mreader/u/queryKeepByUser.do")
+    Observable<BaseRequest<List<Discuss>>> queryKeepByUser(@Field("from")int from, @Field("maxCount")int maxCount);
+
+    @FormUrlEncoded
+    @POST("mreader/u/queryCommListByUser.do")
+    Observable<BaseRequest<List<Comments>>> queryCommListByUser(@Field("from")int from, @Field("maxCount")int maxCount);
 
     @FormUrlEncoded
     @POST("mreader/u/addBookList.do")

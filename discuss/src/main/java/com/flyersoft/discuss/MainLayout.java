@@ -22,9 +22,9 @@ import com.flyersoft.discuss.http.body.BaseRequest;
 import com.flyersoft.discuss.javabean.account.AccountData;
 import com.flyersoft.discuss.javabean.account.UserInfo;
 import com.flyersoft.discuss.javabean.seekbook.Discuss;
-import com.flyersoft.discuss.shuhuang.BookListMainActivity;
+//import com.flyersoft.discuss.shuhuang.BookListMainActivity;
 import com.flyersoft.discuss.shuhuang.DiscussionArticleActivity;
-import com.flyersoft.discuss.shuhuang.DiscussionMainActivity;
+//import com.flyersoft.discuss.shuhuang.DiscussionMainActivity;
 import com.flyersoft.discuss.shuhuang.DiscussionMainAdapter;
 import com.flyersoft.discuss.shuhuang.EndlessRecyclerOnScrollListener;
 import com.flyersoft.discuss.tools.LogTools;
@@ -119,21 +119,21 @@ public class MainLayout extends RelativeLayout {
                 switch (i) {
                     case 0:
 //                        intent = new Intent(context, UserInfoMainActivity.class);
-                        intent = new Intent(context, BookListMainActivity.class);
-                        intent.putExtra("action", Const.ACTION_ZONGHETAOLUN);
+//                        intent = new Intent(context, BookListMainActivity.class);
+//                        intent.putExtra("action", Const.ACTION_ZONGHETAOLUN);
                         break;
-                    case 1:
-                        intent = new Intent(context, DiscussionMainActivity.class);
-                        intent.putExtra("action", Const.ACTION_ZONGHETAOLUN);
-                        break;
-                    case 2:
-                        intent = new Intent(context, DiscussionMainActivity.class);
-                        intent.putExtra("action", Const.ACTION_SHUHUAN);
-                        break;
-                    case 3:
-                        intent = new Intent(context, DiscussionMainActivity.class);
-                        intent.putExtra("action", Const.ACTION_JINGCAISHUPING);
-                        break;
+//                    case 1:
+//                        intent = new Intent(context, DiscussionMainActivity.class);
+//                        intent.putExtra("action", Const.ACTION_ZONGHETAOLUN);
+//                        break;
+//                    case 2:
+//                        intent = new Intent(context, DiscussionMainActivity.class);
+//                        intent.putExtra("action", Const.ACTION_SHUHUAN);
+//                        break;
+//                    case 3:
+//                        intent = new Intent(context, DiscussionMainActivity.class);
+//                        intent.putExtra("action", Const.ACTION_JINGCAISHUPING);
+//                        break;
                 }
                 context.startActivity(intent);
             }

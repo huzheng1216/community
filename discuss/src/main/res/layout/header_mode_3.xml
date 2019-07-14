@@ -28,7 +28,7 @@
             android:layout_alignParentLeft="true"
             android:gravity="center"
             android:text="返回返回返回"
-            android:textColor="#DC544D"
+            android:textColor="#000"
             android:textSize="16dp" />
     </LinearLayout>
 
@@ -39,7 +39,7 @@
         android:layout_alignParentRight="true"
         android:gravity="center"
         android:text="选项"
-        android:textColor="#DC544D"
+        android:textColor="#000"
         android:textSize="16dp"
         android:paddingRight="20dp"
         android:visibility="gone"/>

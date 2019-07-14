@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:myseek="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <Button
@@ -26,6 +26,19 @@
         android:text="模拟书城"
         android:onClick="bookstore"/>
 
+    <com.flyersoft.seekbooks.CustomSeek
+        android:layout_marginTop="0dp"
+        android:id="@+id/speed"
+        android:layout_width="match_parent"
+        myseek:text2="speed15"
+        android:layout_height="40dp" ></com.flyersoft.seekbooks.CustomSeek>
+
+    <com.flyersoft.seekbooks.CustomSeek
+        android:layout_marginTop="6dp"
+        android:id="@+id/size"
+        android:layout_width="match_parent"
+        myseek:text2="size14"
+        android:layout_height="40dp" ></com.flyersoft.seekbooks.CustomSeek>
     <!--<TextView-->
         <!--android:id="@+id/main_show_person_info"-->
         <!--android:layout_width="wrap_content"-->

@@ -20,12 +20,10 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="com.flyersoft.discuss.shuhuang.DiscussionMainActivity"></activity>
         <activity android:name="com.flyersoft.discuss.shuhuang.DiscussionHelpActivity"></activity>
         <activity android:name="com.flyersoft.discuss.shuhuang.DiscussionChooseBookActivity"></activity>
         <activity android:name="com.flyersoft.discuss.shuhuang.DiscussionChooseStarActivity"></activity>
         <activity android:name="com.flyersoft.discuss.shuhuang.BookMainActivity"></activity>
-        <activity android:name="com.flyersoft.discuss.shuhuang.BookListMainActivity"></activity>
         <activity
             android:name="com.flyersoft.discuss.shuhuang.BookListCreatActivity"
             android:windowSoftInputMode="adjustPan"></activity>

@@ -7,10 +7,12 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.flyersoft.discuss.R;
+
 /**
  * creat by: huzheng
  * date: 2019/5/23
- * description: 添加按钮
+ * description: 悬浮添加按钮
  */
 public class AddCommentView extends View {
 
@@ -43,7 +45,7 @@ public class AddCommentView extends View {
 
         paint.setAntiAlias(true);
 
-        paint.setColor(getResources().getColor(android.R.color.holo_red_light));
+        paint.setColor(getResources().getColor(R.color.base_color));
 
         //找到中心
         int x = width / 2;

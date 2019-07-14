@@ -43,6 +43,6 @@ public class MoonReaderApplication extends Application {
         TencentUploadTools.getInstance(this).init(this);
 
         //初始化登录信息
-//        AccountData.initUserInfo(this);
+        AccountData.initUserInfo(this);
     }
 }

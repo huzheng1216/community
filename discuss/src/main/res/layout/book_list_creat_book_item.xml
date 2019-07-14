@@ -75,7 +75,7 @@
         android:padding="4dp"
         android:layout_marginRight="20dp"
         android:text="编辑推荐语"
-        android:textColor="@color/text_main"
+        android:textColor="@color/base_color"
         android:textSize="10dp"
         android:background="@drawable/book_list_edit_bt"/>
 

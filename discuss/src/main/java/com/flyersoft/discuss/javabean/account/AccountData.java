@@ -20,7 +20,10 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * Created by 37399 on 2016/10/31.
+ * @author huzheng
+ * @date 2019-07-14
+ * @description
+ * 用户数据中心
  */
 public class AccountData {
 

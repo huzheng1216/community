@@ -50,7 +50,7 @@
     </style>
 
     <style name="TabLayoutTextStyle">
-        <item name="android:textSize">18dp</item>
+        <item name="android:textSize">14dp</item>
     </style>
 
 </resources>

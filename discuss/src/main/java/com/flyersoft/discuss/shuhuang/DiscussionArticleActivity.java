@@ -243,7 +243,7 @@ public class DiscussionArticleActivity extends DiscessBaseActivity implements Co
 
         //初始化头部
         HeaderModeStyleTwo headerModeStyleTwo = findViewById(R.id.header1);
-        headerModeStyleTwo.init(TITLE_MAIN, "列表", "", new HeaderModeStyleTwo.HeaderModeStyleTwoListener() {
+        headerModeStyleTwo.init(TITLE_MAIN, "", "", new HeaderModeStyleTwo.HeaderModeStyleTwoListener() {
             @Override
             public void onBack() {
                 DiscussionArticleActivity.this.finish();
